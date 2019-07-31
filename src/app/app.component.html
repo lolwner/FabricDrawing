@@ -1,20 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+  <div class="row image-viewer">
+      <div class="col-xl-9 viewer-container">
+          <canvas id="canvas"></canvas>
+      </div>
+      <div class="col-xl-3 viewer-editor">
+          <div class="card">
+              <div class="card-header">Draw</div>
+              <div class="card-body">
+                  <input type="color" id="drawing-color" [(ngModel)]="colorCode" (change)="colorChange()">
+                  <button id="switchMode" (click)="switchModeClick()"><i class="material-icons">
+                          create
+                      </i></button>
+                      <button id="switchMode" (click)="cropClick()"><i class="material-icons">
+                          crop
+                      </i></button>
+              </div>
+          </div>
+          <div class="card">
+              <mat-slider min="1" max="100" step="1" value="10" (input)="changeBrush($event)"></mat-slider>
+              <div class="card-header">Add text</div>
+              <div class="card-body">
+                  <div class="input-group">
+                      <div class="input-group-append">
+                          <input type="text" class="form-control" [(ngModel)]="textString">
+                          <span class="input-group-text">
+                              <button id="add-text" data-toggle="tooltip" data-placement="bottom" title="Add text"
+                                  class="btn btn-primary" (click)="addText()">
+                                  <i class="material-icons">
+                                      add
+                                  </i>
+                              </button>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xl-12 text-right">
+                  <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button"
+                      class="btn btn-primary save-btn" (click)="rasterize();">
+                      <i class="material-icons">
+                          save_alt
+                      </i></button>
+              </div>
+              <button class="btn-cancel" mat-button (click)="close()">Cancel</button>
+          </div>
+      </div>
+  </div>
+  <br>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
