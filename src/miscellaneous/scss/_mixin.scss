@@ -1,0 +1,91 @@
+@import "src/miscellaneous/scss/variable.scss";
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin buttonicon {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+}
+@mixin button-transparent{
+  border:none;
+  outline:none;
+  background:transparent;
+}
+@mixin headermaticon {
+  vertical-align: middle;
+  width: auto;
+  height: auto;
+  font-size: 33px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+@mixin headerbuttontext{
+  margin-left: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #99c6e4;
+}
+@mixin table_tab_font{
+  font-size:15px;
+  text-align:center;
+}
+@mixin calendar-pagination-button{
+  width: 140px;
+  cursor: pointer;
+  height: 32px;
+  background: #99C6E4;
+  border: 1px solid #0046A3;
+  border-radius: 5px;
+  color: #0046A3;
+  font-size: 13px;
+}
+
+@mixin overlay_close_icon($top,$right,$fcolor,$fsize){
+  .close_dialog{
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute!important;
+    right: $right;
+    top: $top;
+    padding: 0px!important;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+    &:hover{
+      background: transparent;
+    }
+    mat-icon{
+      color: $fcolor;
+      font-size:$fsize;
+    }
+  }
+
+}
+/*vertical scrollbar*/
+@mixin vertical_scroll($width,$bcolor,$radius){
+    ::-webkit-scrollbar {
+    width:$width;  
+   
+  } 
+::-webkit-scrollbar-thumb {
+    background:$bcolor;
+    border-radius: $radius;
+   
+  }  
+}
+@mixin font_style($font-size,$font-weight,$font-color){
+  font-size:$font-size;
+  font-weight:$font-weight;
+  color:$font-color;
+}

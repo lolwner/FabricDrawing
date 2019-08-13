@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
   }
 
   addImageOnCanvas() {
-    fabric.Image.fromURL('https://pbs.twimg.com/media/EA02knLWsAAhpbE?format=jpg&name=4096x4096', (img) => {
+    fabric.Image.fromURL('https://images.unsplash.com/photo-1446292267125-fecb4ecbf1a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', (img) => {
       img.selectable = true;
       img.id = 'target';
       this.canvas.add(img);

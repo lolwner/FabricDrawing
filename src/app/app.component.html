@@ -1,51 +1,55 @@
 <div class="container">
-  <div class="row image-viewer">
-      <div class="col-xl-9 viewer-container">
-          <canvas id="canvas"></canvas>
-      </div>
-      <div class="col-xl-3 viewer-editor">
-          <div class="card">
-              <div class="card-header">Draw</div>
-              <div class="card-body">
-                  <input type="color" id="drawing-color" [(ngModel)]="colorCode" (change)="colorChange()">
-                  <button id="switchMode" (click)="switchModeClick()"><i class="material-icons">
-                          create
-                      </i></button>
-                      <button id="switchMode" (click)="cropClick()"><i class="material-icons">
-                          crop
-                      </i></button>
-              </div>
-          </div>
-          <div class="card">
-              <mat-slider min="1" max="100" step="1" value="10" (input)="changeBrush($event)"></mat-slider>
-              <div class="card-header">Add text</div>
-              <div class="card-body">
-                  <div class="input-group">
-                      <div class="input-group-append">
-                          <input type="text" class="form-control" [(ngModel)]="textString">
-                          <span class="input-group-text">
-                              <button id="add-text" data-toggle="tooltip" data-placement="bottom" title="Add text"
-                                  class="btn btn-primary" (click)="addText()">
-                                  <i class="material-icons">
-                                      add
-                                  </i>
-                              </button>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-xl-12 text-right">
-                  <button data-toggle="tooltip" data-placement="bottom" title="Export to image" type="button"
-                      class="btn btn-primary save-btn" (click)="rasterize();">
-                      <i class="material-icons">
-                          save_alt
-                      </i></button>
-              </div>
-              <button class="btn-cancel" mat-button (click)="close()">Cancel</button>
-          </div>
-      </div>
-  </div>
-  <br>
+    <div class="row">
+
+        <mat-card class="col-sm" style="max-width: 400px;">
+            <div>
+                <div>Draw</div>
+                <div>
+                    <input type="color" id="drawing-color" [(ngModel)]="colorCode" (change)="colorChange()">
+                    <button mat-button id="switchMode" (click)="switchModeClick()">
+                        <mat-icon>
+                            create
+                        </mat-icon>
+                    </button>
+                    <button mat-button id="switchMode" (click)="cropClick()">
+                        <mat-icon>
+                            crop
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <mat-slider min="1" max="100" step="1" value="10" (input)="changeBrush($event)"></mat-slider>
+                <div>Add text</div>
+                <div>
+                    <div>
+                        <div>
+                            <input type="text" [(ngModel)]="textString">
+                            <span>
+                                <button mat-button id="add-text" data-toggle="tooltip" data-placement="bottom"
+                                    title="Add text" (click)="addText()">
+                                    <mat-icon>
+                                        add
+                                    </mat-icon>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <button mat-button data-toggle="tooltip" data-placement="bottom" title="Export to image"
+                        type="button" (click)="rasterize();">
+                        <mat-icon>
+                            save_alt
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card>
+        <div class="col-sm">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
 </div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,12 @@ import { MatSliderModule } from '@angular/material/slider';
   imports: [
     BrowserModule,
     FormsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
